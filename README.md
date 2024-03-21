@@ -40,6 +40,61 @@ browserList
 -------------------------
 
 
+Episode 3
+--------------------------------------------
+"scripts": {
+    "start": "parcel index.html",   // start is keyword
+    "build": "parcel build index.html",
+    "test" : "jest"
+  },
+
+  npm run start  ====  npm start  // ==  (npx parcel index.html)
+  npm run build  !==  npm build
+
+------------------------------------------
+  React Element is not a HTML element it a Object
+  when we reder this to Dom its become a HTml element
+
+  JSX is Not HTMl : JSX is like HTML syntax /XML (its diffrent syntax)
+
+
+  JSX and React is Diffrent
+
+  Functional Component should start with Cappital Letter (Naming comvention)
+
+  ------------------------------------------
+  Babel (JSX - React)
+  ------------------------------------------
+  JSX attribute  = ClassName , tabIndex // camelcase 
+
+
+  React Component
+  ----------------------------------------------
+  Class Based Component  (Old way)
+  Function Based Component/functional component (New Way) ***
+
+
+  Functional Component 
+  ---------------------------------------------
+  If a function is Returning a "React Element" its functional component.
+
+  functional Componenet Return a JSX 
+
+  its a Normal JS fucntion Returning a "React Element"
+
+  JSX prevent Cross site Attack 
+  it sanitize Everything inside {data}
+
+
+
+  Episode 4
+  ------------------------------------------------------
+
+
+
+
+
+
 
 
 
