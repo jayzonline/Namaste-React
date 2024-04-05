@@ -2,50 +2,104 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 
-//React.createElement => ReactElement(JSobject) => HtmlElement(render)
-
-//This is React
-const headingReact = React.createElement('h1', {id:"heading"}, 'Namaste React Root!!')
-
-
-
-// JSX =>(Transplie using Babel) React.createElement => ReactElement(JSobject) => HtmlElement(render)
-
-//this is JSX, (transplied it before it Reach the JS Engine ) - Parcel => Babel do the traplilation (JSX to React)
-const headingJSX = <h1 id='heading' className='heading'>Namaste React Using JSX</h1>
-
-//multiLine JSX
-// (<h1 id='heading' 
-//    className='heading'>
-//     Namaste React Using JSX</h1>)
-
-//functional Component Example
-const fn = () => true;
-const FunctionalComponent = () => {
-    return <h1>Namaste React Functional Component</h1>
+const Header = () => {
+    return (
+        <div className='header'>
+            <div className='logo-container'>
+                <img className='logo' src='https://static.vecteezy.com/system/resources/previews/010/628/614/original/food-order-logo-mobile-food-logo-online-food-delivery-logo-vector.jpg' />
+            </div>
+            <div className='nav-items'>
+                <ul className='unorder-list'>
+                    <li>Home</li>
+                    <li>About Us</li>
+                    <li>Resturents</li>
+                    <li>Contact Us</li>
+                </ul>
+            </div>
+        </div>
+    )
 }
-const FunctionalComponent2 = () => 
-      ( <h1> 
-        Namaste React Functional Component
-        </h1> )
-/*-------------------------------------------------------*/
 
-const name = "Jayagovind";
-const Title = ()=> <h1>Namaste React Functional Component</h1>;
-const reactElement1 = <span>This is React Element 1 </span>
-const reactElement2 = (<div><h1>This is React Elemment 2</h1>{reactElement1}</div>)
+//inline Style
+const styleRes = {
+    backgroundColor: "D3D3D3"
+}
+//props is an object 
+//{resName}
+const ResturentCard = (props) => {
+    const { resData } = props
+    const { resName, cusines, avgRating, deliveryTime, img } = resData;
+    return (
+        //style={{ backgroundColor: "coral"}}
+        <div className='res-cards' style={styleRes}>
+            <img alt='hotel' className='card-res-logo' src={img}></img>
+            <h3>{resName}</h3>
+            <h4>{cusines.join(', ')}</h4>
+            <h4>{avgRating}</h4>
+            <h4>{deliveryTime} minutes.</h4>
+        </div>
+    )
+}
 
-//rendering inside MainHeader Component // this is also called Component Compostiion one inside another
-//{} we can Write any Javascript expression inside this curly braces inside JSX
-const MainHeader = () => <div className='main'>
-    {name} 
-    {console.log("hi")}
-    {reactElement2}
-    {Title()} 
-    <Title/>
-    <Title></Title>
-</div>
+
+const resObj =
+    [
+        {
+            id: 1,
+            resName: 'KFC',
+            cusines: ['biriyani', 'burger', 'sandwitch', 'smoothie'],
+            img: 'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e0dccvu2xvdzfajo9ccs',
+            avgRating: 3.8,
+            deliveryTime: 38
+        },
+        {
+            id: 2,
+            resName: 'Meghana Foods',
+            cusines: ['biriyani', 'southIndian', 'NorthIndian'],
+            img: 'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/xoyegxqmuhjnjykxg4jn',
+            avgRating: 4.5,
+            deliveryTime: 40
+        },
+        {
+            id: 3,
+            resName: 'SaravanaBhavan',
+            cusines: ['southIndian', 'NorthIndian'],
+            img: 'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/xoyegxqmuhjnjykxg4jn',
+            avgRating: 4,
+            deliveryTime: 30
+        }
+
+    ]
+
+const Body = () => {
+    //these are called props 
+    // <ResturentCard resName="Meghana Foods"/>
+    return (
+        <div className='body'>
+            <div className='search'>Search</div>
+            <div className='res-container'>
+                {
+                    resObj.map((res) => (<ResturentCard key={res.id} resData={res} />))
+                }
+            </div>
+        </div>
+    )
+}
+
+
+
+//component compostion
+const AppLayout = () => {
+    return (
+        <div className='app'>
+            <Header />
+            <Body />
+        </div>
+    )
+}
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
-root.render(<MainHeader/>)
+root.render(<AppLayout />)
 

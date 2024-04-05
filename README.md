@@ -89,6 +89,63 @@ Episode 3
 
   Episode 4
   ------------------------------------------------------
+  Food Ordering App!!!
+
+  First - Plan (Wireframe) - create
+  Second - Based on Wireframe : decide components
+  <header>
+  <logo>
+  <nav>
+
+  <body>
+  <search bar>
+  <Resturent container>
+    <resturent cards>
+
+  <footer> 
+    <contact us>
+    <copy right>
+
+
+Props 
+------
+props is an object 
+
+which help to pass data to a functional component 
+
+passing props like this 
+
+<Component resName="ResturantName">
+//NORMAL
+(props)=> {
+{props.resName}
+}
+
+//DESTRUCTRING
+({resName})=> {
+{resName}
+}
+
+
+
+
+config Driven UI
+----------------------
+in Nutshell data coming from the backend will decide what to show in the frontend
+for a food order app diffrent location shows diffrent details based on this 
+
+call Config Driven UI (it should have a config for each and every location)
+
+
+Key :
+--------
+should use key when looping
+Never Use index as key use somthing unique like Id or something...
+
+
+
+Episode 5
+---------------------
 
 
 
