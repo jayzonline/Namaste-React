@@ -147,6 +147,70 @@ Never Use index as key use somthing unique like Id or something...
 Episode 5
 ---------------------
 
+create seperate component / split component
+component file name start with Capital Letter "Header"
+
+file extention (it doesn't Matter)
+.js
+.jsx
+.tsx (Typescript)
+
+
+export
+
+--
+
+
+Default export vs named export (one file contain only one default export)
+
+export const App_Data = {..}  (named export)
+
+
+how to import 
+--
+
+named export will be imported like this 
+
+import { APP_DATA } from ./utils
+
+default export will be imported like this
+
+import APP_DATA from ./utils
+
+
+""You are trying to reassign a value to ResObj, which seems to be imported from an external file. 
+Reassigning a value to an imported module is not allowed. Instead, 
+you should filter the data and store it in a new variable.""
+
+
+# Hook (is a normal JS function)
+- useState() : super powerfull state variable in React
+- useEffect()
+
+
+example useState()
+
+const [list,setList] = useState([])
+
+here setList is a function / what happen to the variable is defined by the setList function
+
+
+
+ When ever a state variable updated React will rerender that UI
+
+
+ # Reconsiliation ALGORITHAM / React Fiber
+
+ 
+Episode 6
+---------------------
+
+
+
+
+
+
+
 
 
 

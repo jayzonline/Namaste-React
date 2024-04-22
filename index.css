@@ -38,3 +38,8 @@ ul > li {
 .card-res-logo {
   width: 100%;
 }
+
+.btn-top-rated{
+  margin: 10px;
+  cursor: pointer;
+}
