@@ -1,7 +1,10 @@
-import  App_Logo  from '../utils/constants'
+import App_Logo from '../utils/constants'
+import { useState } from 'react';
 
 
 const Header = () => {
+    const [logBtn, setLogBtn] = useState('Login');
+    
     return (
         <div className='header'>
             <div className='logo-container'>
@@ -14,6 +17,11 @@ const Header = () => {
                     <li>Resturents</li>
                     <li>Contact Us</li>
                 </ul>
+            </div>
+            <div className='loginn-container'>
+            <button className='log-btn' onClick={()=> {
+                logBtn === 'Login' ? setLogBtn('Logout') : setLogBtn('Login')
+            }}>{logBtn}</button>
             </div>
         </div>
     )

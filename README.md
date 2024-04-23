@@ -205,6 +205,49 @@ here setList is a function / what happen to the variable is defined by the setLi
 Episode 6
 ---------------------
 
+Monolitic & Microservice Architecture
+
+Monolitic Architecture is old way ecerything (API , ui SMSservice ) in one place may be in one repo etc..
+Microservice has diffent service for diffrent things like (API REPO, UI , DB ) its all independent and may use diffrent technologie stack
+
+#  two way to fecth data from api
+                  500ms wait
+#1 : Page Load -> call API -> Render UI (typical method )
+                  can see skelten 
+#2 : Page Load -> Render skelten of UI -> Call API -> Render UI (method mostly used in React) : Better UX
+
+
+# useEffect
+imported {useEffect} from 'react'
+
+useEffect(()=>{console.log("a"), []})
+
+useEffect load once the component intial rendder completed.
+
+what is the use case of UseEffect #2 (in case of the seccond approch)
+
+CORS policy 
+-----------------------
+the browser block call from one origin to another (due to origin diffrence)
+use CORS extention to bypass CORS issue
+
+ 
+# shimmer UI (Skelten UI as loader) 
+
+
+State 
+-----------------------
+whenever state variable change react will trigger Reconsiliation algoritham (Re-render that component).
+
+
+
+Episode 7
+------------
+
+
+
+
+
 
 
 
